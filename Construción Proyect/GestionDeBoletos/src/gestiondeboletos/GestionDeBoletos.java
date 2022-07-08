@@ -18,8 +18,10 @@ public class GestionDeBoletos {
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
-        String ruta = "C:\\Users\\isaac\\OneDrive\\Escritorio\\"; //C:\\Users\\isaac\\OneDrive\\Escritorio\\
+        /*String ruta = "C:\\Users\\isaac\\OneDrive\\Escritorio\\"; //C:\\Users\\isaac\\OneDrive\\Escritorio\\
         String nombre = "Usuarios.txt";
-        Sistema system = new Sistema(ruta, nombre);
+        Sistema system = new Sistema(ruta, nombre);*/
+        ControladorInicioSesion controlador = new ControladorInicioSesion();
+        controlador.iniciar();
     }
 }
