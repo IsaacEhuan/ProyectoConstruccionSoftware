@@ -7,6 +7,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import model.Usuario;
 import view.VistaLogIn;
@@ -37,14 +38,14 @@ public class ControladorInicioSesion implements ActionListener {
         if(e.getSource() == ventanaInicioSesion.getVerificarUser()){
             String nombre = ventanaInicioSesion.getUsuario() .getText();
             String contrasenia = ventanaInicioSesion.getContrasenia().getText();
-            JOptionPane.showMessageDialog(ventanaInicioSesion, "Botón presionado");
             if(validarSesion(nombre, contrasenia)){
                 //función de iniciar sesión.
-                JOptionPane.showMessageDialog(ventanaInicioSesion, "Error de inicio de sesión", "Error", 1);
+                JOptionPane.showMessageDialog(ventanaInicioSesion, "Sesión iniciada correctamente", "Error", 1);
             }else{
                 JOptionPane.showMessageDialog(ventanaInicioSesion, "Error de inicio de sesión", "Error", 0);
             }
         }
+        
     }
     
     
