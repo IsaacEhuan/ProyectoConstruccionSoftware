@@ -9,20 +9,20 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import model.Usuario;
-import view.VistaInicioSesion;
+import view.VistaLogIn;
 
 /**
  *
  * @author Jahir Gómez
  */
 public class ControladorInicioSesion implements ActionListener {
-    VistaInicioSesion ventanaInicioSesion;
+    VistaLogIn ventanaInicioSesion;
     ArrayList<Usuario> listaUsuarios;
     
     public ControladorInicioSesion(){
-        this.ventanaInicioSesion = new VistaInicioSesion();
+        this.ventanaInicioSesion = new VistaLogIn();
         this.listaUsuarios = new ArrayList<>();
-        ventanaInicioSesion.getBotonIniciarSesion().addActionListener(this);
+        ventanaInicioSesion.getVerificarUser().addActionListener(this);
         //ventanaInicioSesion.getUsuarioCampo().addActionListener(this);
         //ventanaInicioSesion.getContraseniaCampo().addActionListener(this);
     }
@@ -34,9 +34,9 @@ public class ControladorInicioSesion implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         //Código de ejecución.
-        if(e.getSource() == ventanaInicioSesion.getBotonIniciarSesion()){
-            String nombre = ventanaInicioSesion.getUsuarioCampo().getText();
-            String contrasenia = ventanaInicioSesion.getContraseniaCampo().getText();
+        if(e.getSource() == ventanaInicioSesion.getVerificarUser()){
+            String nombre = ventanaInicioSesion.getUsuario() .getText();
+            String contrasenia = ventanaInicioSesion.getContrasenia().getText();
             JOptionPane.showMessageDialog(ventanaInicioSesion, "Botón presionado");
             if(validarSesion(nombre, contrasenia)){
                 //función de iniciar sesión.
